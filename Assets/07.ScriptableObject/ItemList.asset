@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca57939b13010f47861a996f3ce9696, type: 3}
+  m_Name: ItemList
+  m_EditorClassIdentifier: 
+  EquipmentList:
+  - ItemName: "\uBD89\uC740 \uD0DC\uADF9\uB839"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: 916870817, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 200
+    - EffectType: 1
+      EffectValue: 30
+    - EffectType: 0
+      EffectValue: 50
+  - ItemName: "\uB1CC\uC81C\uB3C4"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: 2082313979, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 100
+    - EffectType: 1
+      EffectValue: 20
+    - EffectType: 0
+      EffectValue: 250
+  - ItemName: "\uD604\uBB34\uC625\uC7A5"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: -1041992978, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 500
+    - EffectType: 1
+      EffectValue: 100
+    - EffectType: 0
+      EffectValue: 30
+  - ItemName: "\uC801\uC6B4\uC120"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: 1188083184, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 150
+    - EffectType: 1
+      EffectValue: 10
+    - EffectType: 0
+      EffectValue: 180
+  - ItemName: "\uC5FC\uB8E1\uAC80"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: -1461282652, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 120
+    - EffectType: 1
+      EffectValue: 25
+    - EffectType: 0
+      EffectValue: 230
+  - ItemName: "\uBE59\uACB0\uC2E0\uAC80"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: -406314403, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 130
+    - EffectType: 1
+      EffectValue: 40
+    - EffectType: 0
+      EffectValue: 210
