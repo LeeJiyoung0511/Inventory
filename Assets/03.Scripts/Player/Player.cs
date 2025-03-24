@@ -5,15 +5,14 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private CharacterData characterData;
 
-    private Character character;
-
+    public Character Character;
     public Action<Character> OnUpdateStatusEvent = delegate { };
 
     private void Awake()
     {
         GameManager.Instance.Player = this;
 
-        character = new Character(
+        Character = new Character(
             characterData.BaseAP, 
             characterData.BaseDP,
             characterData.BaseHP);
@@ -27,7 +26,7 @@ public class Player : MonoBehaviour
             return;
         }
         ChangeStatus(equipment.EquipEffects);
-        OnUpdateStatusEvent(character);
+        OnUpdateStatusEvent(Character);
     }
 
     public void UnEquip(Equipment equipment)
@@ -38,7 +37,7 @@ public class Player : MonoBehaviour
             return;
         }
         ChangeStatus(equipment.EquipEffects, -1);
-        OnUpdateStatusEvent(character);
+        OnUpdateStatusEvent(Character);
     }
 
     private void ChangeStatus(EquipEffect[] equipEffects, int sign = 1)
@@ -50,13 +49,13 @@ public class Player : MonoBehaviour
             switch (effect.EffectType)
             {
                 case EquipEffectType.AP:
-                    character.ModifyAttackPower(value);
+                    Character.ModifyAttackPower(value);
                     break;
                 case EquipEffectType.DP:
-                    character.ModifyDefensePower(value);
+                    Character.ModifyDefensePower(value);
                     break;
                 case EquipEffectType.HP:
-                    character.ModifyHP(value);
+                    Character.ModifyHP(value);
                     break;
             }
         }
