@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
+    [SerializeField] public CanvasGroup CanvasGroup;
+
     protected UIManager uiManager;
 
     protected virtual void Start()
@@ -9,16 +12,19 @@ public class UIBase : MonoBehaviour
         uiManager = UIManager.Instance;
     }
 
-    public bool IsShow //표시되어있는지
+    public virtual void Display()
     {
-        set
-        {
-            Display(value);
-        }
+        gameObject.SetActive(true);
+        EffectManager.PlayFadeIn(CanvasGroup, 0.3f);
     }
 
-    protected virtual void Display(bool isShow) 
+    public virtual void Hide(Action OnEndFadeOut = null)
     {
-        gameObject.SetActive(isShow);
+        Action endAction = () =>
+        {
+            gameObject.SetActive(false);
+            OnEndFadeOut?.Invoke();
+        };
+        EffectManager.PlayFadeOut(CanvasGroup, 0.3f, endAction);
     }
 }

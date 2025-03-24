@@ -4,33 +4,38 @@ using UnityEngine.UI;
 
 public class UIInventory : UIBase
 {
-    [SerializeField] private ScrollController scrollController;
     [SerializeField] private Button returnButton;
     [SerializeField] private EquipmentInventory equipmentInventory;
+
+    [Header("연출")]
+    [SerializeField] private ModifyHeightEffect scrollEffect;
+    [SerializeField] private ModifyHeightEffect scrollViewEffect;
 
     protected override void Start()
     {
         base.Start();
         returnButton.onClick.AddListener(Return);
-        scrollController.OnCloseScrollEvent += OnCloseScroll;
     }
 
-    protected override void Display(bool isShow)
+    public override void Display()
     {
-        base.Display(isShow);
+        scrollEffect.Expand(); //스크롤 확장
+        scrollViewEffect.Expand();
+        base.Display();
         equipmentInventory.SetItems();
     }
 
     private void Return()
     {
-        scrollController.PlayCloseScroll();
-        returnButton.gameObject.SetActive(false);
+        scrollEffect.Collapse();
+        scrollViewEffect.Collapse();
+        returnButton.interactable = false;
+        Hide(EndCloseScrollEvent);
     }
 
-    private void OnCloseScroll()
+    private void EndCloseScrollEvent()
     {
-        Display(false);
-        returnButton.gameObject.SetActive(true);
-        uiManager.UIMainMenu.IsShow = true;
+        returnButton.interactable = true;
+        uiManager.UIMainMenu.Display();
     }
 }

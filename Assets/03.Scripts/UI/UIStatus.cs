@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class UIStatus : UIBase
 {
-    protected override void Start()
-    {
-        base.Start();
-    }
 }

@@ -14,20 +14,12 @@ public class UIMainMenu : UIBase
     }
 
     private void DisplayInventory()
-    {
-        Display(false);
-        uiManager.UIInventory.IsShow = true;
+    {  
+        Hide(uiManager.UIInventory.Display);
     }
 
     private void DisplayStatus()
     {
-        Display(false);
-        uiManager.UIStatus.IsShow = true;
+        Hide(uiManager.UIStatus.Display);
     }
-
-    protected override void Display(bool isShow)
-    {
-        base.Display(isShow);
-    }
-
 }
