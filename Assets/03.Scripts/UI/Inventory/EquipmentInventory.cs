@@ -16,6 +16,7 @@ public class EquipmentInventory : MonoBehaviour
     private void Awake()
     {
         CreateSlots();
+        SetItems();
     }
 
     private void Start()

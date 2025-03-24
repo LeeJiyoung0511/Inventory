@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +21,6 @@ public class UIInventory : UIBase
         scrollEffect.Expand(); //스크롤 확장
         scrollViewEffect.Expand();
         base.Display();
-        equipmentInventory.SetItems();
     }
 
     private void Return()
