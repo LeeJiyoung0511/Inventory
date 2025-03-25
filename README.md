@@ -22,8 +22,37 @@
 
 
 ## 🧩 주요 기능
+<details>
+<summary>✅장비 착용 및 해제 기능</summary>
 
-- ✅ **장비 착용 및 해제 기능**
+```csharp
+    private void ClickItem(EquipmentSlot slot)
+    {
+        // 같은 장비를 다시 클릭하면 해제
+        if (equippedEquipment == slot)
+        {
+            UnEquip(slot); //장착 해제
+            SoundManager.Instance.PlaySE(SEType.EquipUnEquip); //해제 효과음 재생
+            DialogueManager.Instance.MoveNextSpeechState(SpeechType.UnEquip); //장착 해제 대사 표시
+            return;
+        }
+
+        // 기존 장비가 있다면 해제
+        if (equippedEquipment != null)
+        {
+            UnEquip(equippedEquipment); //장착 해제
+        }
+        else
+        {
+            DialogueManager.Instance.MoveNextSpeechState(SpeechType.Equip); //장착 대사 표시
+        }
+
+        SoundManager.Instance.PlaySE(SEType.EquipUnEquip);  //장착 효과음 재생
+        Equip(slot); //장착
+    }
+```
+</details>
+
 - 🧠 **상태머신(FSM) 기반의 대사 처리 시스템**
 - 💬 **ScriptableObject 기반 대사/사운드 데이터 관리**
 - 🔄 **딕셔너리 직렬화 구조 (SerializableDictionary)**
