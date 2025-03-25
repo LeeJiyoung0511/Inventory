@@ -16,10 +16,12 @@ public class UIMainMenu : UIBase
     private void DisplayInventory()
     {  
         Hide(uiManager.UIInventory.Display);
+        SoundManager.Instance.PlaySE(SEType.Button);
     }
 
     private void DisplayStatus()
     {
         Hide(uiManager.UIStatus.Display);
+        SoundManager.Instance.PlaySE(SEType.Button);
     }
 }

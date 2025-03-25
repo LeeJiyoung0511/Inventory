@@ -40,6 +40,7 @@ public class UIStatus : UIBase
         scrollEffect.Collapse();
         returnButton.interactable = false;
         Hide(EndCloseScrollEvent);
+        SoundManager.Instance.PlaySE(SEType.Button);
     }
 
     private void EndCloseScrollEvent()

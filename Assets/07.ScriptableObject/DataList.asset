@@ -88,6 +88,17 @@ MonoBehaviour:
     - "\uC57D\uD574\uC84C\uC5B4...."
   - SpeechType: 2
     DialogueText:
-    - "\uC790,\uC774\uC81C \uD654\uC0B0\uC744 \uC77C\uC73C\uCF1C\uBCFC\uAE4C?"
-    - "\uD654\uC0B0\uC740\n\uD654\uC0B0\uC758 \uAE38\uC744 \uAC04\uB2E4"
-    - "\uC774\uAC8C \uBC14\uB85C \uB098\uC758 \uD654\uC0B0\uC785\uB2C8\uB2E4,\n\uC7A5\uBB38\uC0AC\uD615."
+    - "\uC815\uC758\uB3C4 \uD798\uC774 \uC788\uC5B4\uC57C\uC9C0."
+    - "\uC774\uBC88 \uC0DD\uC740 \n\uBB3C\uB7EC\uC11C\uC9C0 \uC54A\uC544."
+    - "\uC815\uC758... \n\uC775\uC219\uD558\uC9C4 \uC54A\uAD70."
+    - "\uC545\uC740 \uC2F9\uC744 \uC790\uB97C \uBFD0."
+    - "\uC608\uC804\uCC98\uB7FC\uC740 \uC548 \uD574."
+    - "\uC815\uD30C\uB2F5\uAC8C, \n\uAE68\uB057\uC774 \uC8FD\uC5EC\uC8FC\uC9C0."
+    - "\uC633\uACE0 \uADF8\uB984\uC5D4 \uD765\uBBF8 \uC5C6\uC5B4."
+    - "\uADF8\uB550 \uC8FD\uC600\uACE0, \n\uC9C0\uAE08\uB3C4 \uADF8\uB7F4 \uBFD0."
+  SEClips:
+    dataList:
+    - Key: 0
+      Value: {fileID: 8300000, guid: 42cb36b8846678d45a5e6af25aa7fcf5, type: 3}
+    - Key: 1
+      Value: {fileID: 8300000, guid: 5307064c368510b459334c79cb18b176, type: 3}

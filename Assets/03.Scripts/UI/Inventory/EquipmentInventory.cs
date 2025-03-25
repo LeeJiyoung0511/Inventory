@@ -50,6 +50,7 @@ public class EquipmentInventory : MonoBehaviour
         if (equippedEquipment == slot)
         {
             UnEquip(slot);
+            SoundManager.Instance.PlaySE(SEType.EquipUnEquip);
             DialogueManager.Instance.MoveNextSpeechState(SpeechType.UnEquip);
         }
         else
@@ -62,6 +63,7 @@ public class EquipmentInventory : MonoBehaviour
             {
                 DialogueManager.Instance.MoveNextSpeechState(SpeechType.Equip);
             }
+            SoundManager.Instance.PlaySE(SEType.EquipUnEquip);
             Equip(slot);
         }
     }

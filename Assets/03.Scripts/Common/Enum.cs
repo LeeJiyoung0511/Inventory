@@ -16,3 +16,9 @@ public enum SpeechType
     UnEquip,
     Normal,
 }
+
+public enum SEType
+{
+    Button,             //버튼 클릭 효과음
+    EquipUnEquip  //장착,장착해제시 효과음
+}

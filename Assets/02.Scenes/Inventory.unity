@@ -1008,6 +1008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 675701553}
   - component: {fileID: 675701552}
+  - component: {fileID: 675701554}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -1120,12 +1121,26 @@ Transform:
   m_GameObject: {fileID: 675701551}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9840443, y: -0.48971027, z: 0.027967812}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &675701554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675701551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ed1bfddfa04d447bfb4456cff9a3b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataList: {fileID: 11400000, guid: bc24c085d57d2c244b17f2ea2fb7dfcc, type: 2}
+  audioSource: {fileID: 675701552}
 --- !u!1 &779276992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,8 +1480,8 @@ MonoBehaviour:
   dialogueText: {fileID: 1434263026}
   canvasGroup: {fileID: 973243226}
   speechBubble: {fileID: 973243224}
-  DataList: {fileID: 11400000, guid: bc24c085d57d2c244b17f2ea2fb7dfcc, type: 2}
-  displayTime: 3
+  dataList: {fileID: 11400000, guid: bc24c085d57d2c244b17f2ea2fb7dfcc, type: 2}
+  displayTime: 4
   displayDelayTime: 10
 --- !u!1001 &1164891339
 PrefabInstance:
@@ -1676,7 +1691,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCCAD\uBA85 \nLv.999"
+  m_Text: "\uC9C4\uD718\uACB0\nLv.999"
 --- !u!222 &1235762007
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Text dialogueText;
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private Image speechBubble;
-    [SerializeField] private DataList DataList;
+    [SerializeField] private DataList dataList;
 
     [SerializeField] private float displayTime;
     [SerializeField] private float displayDelayTime;
@@ -97,7 +97,7 @@ public class DialogueManager : MonoBehaviour
     //대사 데이터 반환
     private string GetDialogue(SpeechType type)
     {
-        var data = DataList.SpeechDataList.FirstOrDefault(x => x.SpeechType == type);
+        var data = dataList.SpeechDataList.FirstOrDefault(x => x.SpeechType == type);
         return data.GetDialogueText();
     }
 }

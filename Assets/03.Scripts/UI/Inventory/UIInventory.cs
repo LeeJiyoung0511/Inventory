@@ -29,6 +29,7 @@ public class UIInventory : UIBase
         scrollViewEffect.Collapse();
         returnButton.interactable = false;
         Hide(EndCloseScrollEvent);
+        SoundManager.Instance.PlaySE(SEType.Button);
     }
 
     private void EndCloseScrollEvent()
