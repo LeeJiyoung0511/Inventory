@@ -32,8 +32,6 @@
 - 🧬 **장비에 따른 스탯 반영 시스템**
 - 🔁 **이벤트 기반 UI 갱신**
 
----
-
 ## 📚 출처
 - 사용된 사운드: Music by 브그미언 Track 별 https://youtu.be/SEhaCeUftJ8
 
