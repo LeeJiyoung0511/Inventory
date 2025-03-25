@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f3b115ee2268245874b35d928aab2a, type: 3}
+  m_Name: DataList
+  m_EditorClassIdentifier: 
+  EquipmentList:
+  - ItemName: "\uBD89\uC740 \uD0DC\uADF9\uB839"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: 916870817, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 200
+    - EffectType: 1
+      EffectValue: 30
+    - EffectType: 0
+      EffectValue: 50
+  - ItemName: "\uB1CC\uC81C\uB3C4"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: 2082313979, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 100
+    - EffectType: 1
+      EffectValue: 20
+    - EffectType: 0
+      EffectValue: 250
+  - ItemName: "\uD604\uBB34\uC625\uC7A5"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: -1041992978, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 500
+    - EffectType: 1
+      EffectValue: 100
+    - EffectType: 0
+      EffectValue: 30
+  - ItemName: "\uC801\uC6B4\uC120"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: 1188083184, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 150
+    - EffectType: 1
+      EffectValue: 10
+    - EffectType: 0
+      EffectValue: 180
+  - ItemName: "\uC5FC\uB8E1\uAC80"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: -1461282652, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 120
+    - EffectType: 1
+      EffectValue: 25
+    - EffectType: 0
+      EffectValue: 230
+  - ItemName: "\uBE59\uACB0\uC2E0\uAC80"
+    ItemDesc: 
+    ItemType: 0
+    Sprite: {fileID: -406314403, guid: ed75ced04d5ab884a8258cdd25fdfd11, type: 3}
+    EquipEffects:
+    - EffectType: 2
+      EffectValue: 130
+    - EffectType: 1
+      EffectValue: 40
+    - EffectType: 0
+      EffectValue: 210
+  SpeechDataList:
+  - SpeechType: 0
+    DialogueText:
+    - "\uC74C...\uAC15\uD574\uC9C4 \uB290\uB08C\uC774\uC57C"
+  - SpeechType: 1
+    DialogueText:
+    - "\uC57D\uD574\uC84C\uC5B4...."
+  - SpeechType: 2
+    DialogueText:
+    - "\uC815\uC758\uB3C4 \uD798\uC774 \uC788\uC5B4\uC57C\uC9C0."
+    - "\uC774\uBC88 \uC0DD\uC740 \n\uBB3C\uB7EC\uC11C\uC9C0 \uC54A\uC544."
+    - "\uC815\uC758... \n\uC775\uC219\uD558\uC9C4 \uC54A\uAD70."
+    - "\uC545\uC740 \uC2F9\uC744 \uC790\uB97C \uBFD0."
+    - "\uC608\uC804\uCC98\uB7FC\uC740 \uC548 \uD574."
+    - "\uC815\uD30C\uB2F5\uAC8C, \n\uAE68\uB057\uC774 \uC8FD\uC5EC\uC8FC\uC9C0."
+    - "\uC633\uACE0 \uADF8\uB984\uC5D4 \uD765\uBBF8 \uC5C6\uC5B4."
+    - "\uADF8\uB550 \uC8FD\uC600\uACE0, \n\uC9C0\uAE08\uB3C4 \uADF8\uB7F4 \uBFD0."
+  SEClips:
+    dataList:
+    - Key: 0
+      Value: {fileID: 8300000, guid: 42cb36b8846678d45a5e6af25aa7fcf5, type: 3}
+    - Key: 1
+      Value: {fileID: 8300000, guid: 5307064c368510b459334c79cb18b176, type: 3}
