@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,11 +18,18 @@ public class GameManager : MonoBehaviour
 
     public Player Player { get; set; }
 
+    public DataManager DataManager { get; set; }
+
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DataManager = DataManager.Instance;
         }
+    }
+    private void OnApplicationQuit()
+    {
+        DataManager.Instance.SaveData();
     }
 }

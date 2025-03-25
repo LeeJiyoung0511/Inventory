@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using UnityEngine;
 
 [System.Serializable]
@@ -6,6 +7,7 @@ public class Item
     public string ItemName; //아이템 이름
     public string ItemDesc; // 아이템 설명
     public ItemType ItemType; //아이템 타입
+    [JsonIgnore]
     public Sprite Sprite; //아이템 이미지
 }
 
