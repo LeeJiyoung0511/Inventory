@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ca57939b13010f47861a996f3ce9696, type: 3}
-  m_Name: ItemList
+  m_Script: {fileID: 11500000, guid: 61f3b115ee2268245874b35d928aab2a, type: 3}
+  m_Name: DataList
   m_EditorClassIdentifier: 
   EquipmentList:
   - ItemName: "\uBD89\uC740 \uD0DC\uADF9\uB839"
@@ -79,3 +79,15 @@ MonoBehaviour:
       EffectValue: 40
     - EffectType: 0
       EffectValue: 210
+  SpeechDataList:
+  - SpeechType: 0
+    DialogueText:
+    - "\uC74C...\uAC15\uD574\uC9C4 \uB290\uB08C\uC774\uC57C"
+  - SpeechType: 1
+    DialogueText:
+    - "\uC57D\uD574\uC84C\uC5B4...."
+  - SpeechType: 2
+    DialogueText:
+    - "\uC790,\uC774\uC81C \uD654\uC0B0\uC744 \uC77C\uC73C\uCF1C\uBCFC\uAE4C?"
+    - "\uD654\uC0B0\uC740\n\uD654\uC0B0\uC758 \uAE38\uC744 \uAC04\uB2E4"
+    - "\uC774\uAC8C \uBC14\uB85C \uB098\uC758 \uD654\uC0B0\uC785\uB2C8\uB2E4,\n\uC7A5\uBB38\uC0AC\uD615."

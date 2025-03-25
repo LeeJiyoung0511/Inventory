@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class EquipmentInventory : MonoBehaviour
 {
     [SerializeField] private ScrollRect equipmentListScroll;
-    [SerializeField] private ItemList equipmentList;
+    [SerializeField] private DataList equipmentList;
     [SerializeField] private EquipmentSlot equipmentSlotPrefab;
     [SerializeField] private int MaxSlotCount = 30;
 
@@ -50,12 +50,17 @@ public class EquipmentInventory : MonoBehaviour
         if (equippedEquipment == slot)
         {
             UnEquip(slot);
+            DialogueManager.Instance.MoveNextSpeechState(SpeechType.UnEquip);
         }
         else
         {
             if (equippedEquipment != null)
             {
                 UnEquip(equippedEquipment);
+            }
+            else
+            {
+                DialogueManager.Instance.MoveNextSpeechState(SpeechType.Equip);
             }
             Equip(slot);
         }

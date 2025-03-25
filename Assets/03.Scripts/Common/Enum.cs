@@ -9,3 +9,10 @@ public enum EquipEffectType
     DP, //방어력
     HP //체력
 }
+
+public enum SpeechType
+{
+    Equip,
+    UnEquip,
+    Normal,
+}
