@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
-    [SerializeField] public CanvasGroup CanvasGroup;
-
+    [SerializeField] private  FadeInOutEffect fadeInOutEffect;
     protected UIManager uiManager;
 
     protected virtual void Start()
@@ -15,7 +14,7 @@ public class UIBase : MonoBehaviour
     public virtual void Display()
     {
         gameObject.SetActive(true);
-        EffectManager.PlayFadeIn(CanvasGroup, 0.3f);
+        fadeInOutEffect.FadeIn();
     }
 
     public virtual void Hide(Action OnEndFadeOut = null)
@@ -25,6 +24,6 @@ public class UIBase : MonoBehaviour
             gameObject.SetActive(false);
             OnEndFadeOut?.Invoke();
         };
-        EffectManager.PlayFadeOut(CanvasGroup, 0.3f, endAction);
+        fadeInOutEffect.FadeOut(endAction);
     }
 }

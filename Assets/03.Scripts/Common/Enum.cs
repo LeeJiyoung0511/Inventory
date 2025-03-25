@@ -12,9 +12,9 @@ public enum EquipEffectType
 
 public enum SpeechType
 {
-    Equip,
-    UnEquip,
-    Normal,
+    Equip, //장착 시점
+    UnEquip, //장착해제 시점
+    Normal, //기본
 }
 
 public enum SEType

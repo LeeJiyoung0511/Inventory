@@ -14,13 +14,13 @@ public class Item
 [System.Serializable]
 public class Equipment : Item
 {
-    public EquipEffect[] EquipEffects; //장착시 효과
+    public EquipEffect[] EquipEffects; //장착시 적용할 효과
 }
 
 [System.Serializable]
 public class EquipEffect
 {
-    public EquipEffectType EffectType;
-    public float EffectValue;
+    public EquipEffectType EffectType; //효과타입
+    public float EffectValue; //효과값
 }
 

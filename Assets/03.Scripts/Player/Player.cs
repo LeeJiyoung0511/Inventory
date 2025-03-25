@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         OnUpdateStatusEvent(Character);
     }
 
+    //스탯 조정
     private void ChangeStatus(EquipEffect[] equipEffects, int sign = 1)
     {
         foreach (var effect in equipEffects)

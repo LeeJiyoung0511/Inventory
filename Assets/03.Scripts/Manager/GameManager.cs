@@ -30,6 +30,6 @@ public class GameManager : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        DataManager.Instance.SaveData();
+        DataManager.Instance.SaveData(); //에디터 실행정지시 게임저장
     }
 }

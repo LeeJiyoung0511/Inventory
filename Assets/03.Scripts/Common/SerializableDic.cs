@@ -11,14 +11,14 @@ public class SerializableDic<T1, T2>
     {
         get
         {
-            try
+            try //키값 반환 시도
             {
-                return GetValue(key);
+                return GetValue(key); //문제 없을시 키값 반환 
             }
             catch (KeyNotFoundException e)
             {
-                Debug.LogError($"{e.Message}");
-                return default;
+                Debug.LogError($"{e.Message}"); // 키값 반환에 문제가 있으면 에러 표시
+                return default; //default 반환
             }
         }
         set
@@ -27,7 +27,7 @@ public class SerializableDic<T1, T2>
             {
                 if (dataList[i].Key.Equals(key))
                 {
-                    dataList[i].Value = value;
+                    dataList[i].Value = value; //vaule값 설정
                     return;
                 }
             }

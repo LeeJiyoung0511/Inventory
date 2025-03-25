@@ -1,22 +1,15 @@
 using DG.Tweening;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public static class EffectManager
 {
-    public static void PlayFadeIn(Graphic target, float duration, Action endCallback = null)
-    {
-        AttachOnComplete(target.DOFade(1f, duration), endCallback);
-    }
-    public static void PlayFadeOut(Graphic target, float duration, Action endCallback = null)
-    {
-        AttachOnComplete(target.DOFade(0f, duration), endCallback);
-    }
+    //서서히 보이게 하는 애니메이션
     public static void PlayFadeIn(CanvasGroup target, float duration, Action endCallback = null)
     {
         AttachOnComplete(target.DOFade(1f, duration), endCallback);
     }
+    //서서히 사라지게 하는 애니메이션
     public static void PlayFadeOut(CanvasGroup target, float duration, Action endCallback = null)
     {
         AttachOnComplete(target.DOFade(0f, duration), endCallback);

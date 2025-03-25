@@ -7,7 +7,7 @@ public class EquipmentInventory : MonoBehaviour
     [SerializeField] private ScrollRect equipmentListScroll;
     [SerializeField] private DataList equipmentList;
     [SerializeField] private EquipmentSlot equipmentSlotPrefab;
-    [SerializeField] private int MaxSlotCount = 30;
+    [SerializeField] private int maxSlotCount = 30; //최대 슬롯수
 
     private List<EquipmentSlot> equipmentSlots = new();
     private EquipmentSlot equippedEquipment = null;
@@ -24,9 +24,11 @@ public class EquipmentInventory : MonoBehaviour
         player = GameManager.Instance.Player;
     }
 
+    //슬롯 생성
     private void CreateSlots()
     {
-        for (int i = 0; i < MaxSlotCount; i++)
+        //최대 슬롯수까지 미리 생성 하고 비활성화
+        for (int i = 0; i < maxSlotCount; i++)
         {
             var slot = Instantiate(equipmentSlotPrefab, equipmentListScroll.content);
             slot.gameObject.SetActive(false);
@@ -34,9 +36,10 @@ public class EquipmentInventory : MonoBehaviour
         }
     }
 
+    //슬롯 데이터 설정
     public void SetItems()
     {
-        //데이터 설정
+        //데이터 수 만큼 데이터 설정과 활성화
         for (int i = 0; i < equipmentList.EquipmentList.Length; i++)
         {
             equipmentSlots[i].ItemData = equipmentList.EquipmentList[i];
@@ -47,25 +50,27 @@ public class EquipmentInventory : MonoBehaviour
 
     private void ClickItem(EquipmentSlot slot)
     {
+        // 같은 장비를 다시 클릭하면 해제
         if (equippedEquipment == slot)
         {
-            UnEquip(slot);
-            SoundManager.Instance.PlaySE(SEType.EquipUnEquip);
-            DialogueManager.Instance.MoveNextSpeechState(SpeechType.UnEquip);
+            UnEquip(slot); //장착 해제
+            SoundManager.Instance.PlaySE(SEType.EquipUnEquip); //해제 효과음 재생
+            DialogueManager.Instance.MoveNextSpeechState(SpeechType.UnEquip); //장착 해제 대사 표시
+            return;
+        }
+
+        // 기존 장비가 있다면 해제
+        if (equippedEquipment != null)
+        {
+            UnEquip(equippedEquipment); //장착 해제
         }
         else
         {
-            if (equippedEquipment != null)
-            {
-                UnEquip(equippedEquipment);
-            }
-            else
-            {
-                DialogueManager.Instance.MoveNextSpeechState(SpeechType.Equip);
-            }
-            SoundManager.Instance.PlaySE(SEType.EquipUnEquip);
-            Equip(slot);
+            DialogueManager.Instance.MoveNextSpeechState(SpeechType.Equip); //장착 대사 표시
         }
+
+        SoundManager.Instance.PlaySE(SEType.EquipUnEquip);  //장착 효과음 재생
+        Equip(slot); //장착
     }
 
     private void Equip(EquipmentSlot slot)

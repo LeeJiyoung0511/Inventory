@@ -10,17 +10,16 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] private Text dialogueText;
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private Image speechBubble;
     [SerializeField] private DataList dataList;
 
-    [SerializeField] private float displayTime;
-    [SerializeField] private float displayDelayTime;
+    [SerializeField] private float displayTime; //말풍선 표시 지속시간
+    [SerializeField] private float displayDelayTime; //말풍선의 표시 쿨타임 
 
-    private SpeechStateMachine speechStateMachine = new();
+    private SpeechStateMachine speechStateMachine = new(); //대사 상태 머신
     private Coroutine showDialogueLoopCoroutine;
     private Coroutine hideDialogueCoroutine;
 
-    private Action OnEndDelayEvent = delegate { };
+    private Action OnEndDelayEvent = delegate { };  //말풍선 표시시간이 끝났을때 호출되는 함수
 
     private void Awake()
     {

@@ -613,12 +613,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6964638da2b48469324d93e3e0aaca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasGroup: {fileID: 476375099}
+  fadeInOutEffect:
+    canvasGroup: {fileID: 476375099}
+    duration: 0.3
   hpText: {fileID: 867041946}
   attackPowerText: {fileID: 217215915}
   defensePowerText: {fileID: 779276994}
   returnButton: {fileID: 1164891341}
-  scrollEffect:
+  scrollImageEffect:
     targetRect: {fileID: 1438115004}
     duration: 0.3
     startHeight: 250
@@ -1479,7 +1481,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1434263026}
   canvasGroup: {fileID: 973243226}
-  speechBubble: {fileID: 973243224}
   dataList: {fileID: 11400000, guid: bc24c085d57d2c244b17f2ea2fb7dfcc, type: 2}
   displayTime: 4
   displayDelayTime: 10
@@ -1832,7 +1833,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aff5b67aaec3534885715cd519ab2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasGroup: {fileID: 1266294254}
+  fadeInOutEffect:
+    canvasGroup: {fileID: 1266294254}
+    duration: 0.3
   inventoryButton: {fileID: 1321976800}
   statusButton: {fileID: 2096735193}
 --- !u!225 &1266294254
@@ -7055,17 +7058,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b482cbaf0477194499b3faa2df8cd06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasGroup: {fileID: 1536356907}
+  fadeInOutEffect:
+    canvasGroup: {fileID: 1536356907}
+    duration: 0.3
   returnButton: {fileID: 1619113598}
   equipmentInventory: {fileID: 1762145215}
-  scrollEffect:
+  scrollImageEffect:
     targetRect: {fileID: 925632131}
     duration: 0.3
     startHeight: 250
     endHeight: 850
-  scrollViewEffect:
+  scrollRectEffect:
     targetRect: {fileID: 1762145211}
-    duration: 0.2
+    duration: 0.3
     startHeight: 0
     endHeight: 550
 --- !u!225 &1536356907
@@ -7574,7 +7579,7 @@ MonoBehaviour:
   equipmentListScroll: {fileID: 1762145212}
   equipmentList: {fileID: 11400000, guid: bc24c085d57d2c244b17f2ea2fb7dfcc, type: 2}
   equipmentSlotPrefab: {fileID: 1978368329948088789, guid: e7d6667a871aa044c99435b82531b8ed, type: 3}
-  MaxSlotCount: 30
+  maxSlotCount: 30
 --- !u!1 &1953676530
 GameObject:
   m_ObjectHideFlags: 0
