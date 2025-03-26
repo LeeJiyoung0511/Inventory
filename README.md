@@ -17,11 +17,12 @@
 
 ## 🔧 개발 포인트
 
-- 코드 구조의 **확장성과 재사용성**에 중점을 둔 설계  
-- 상태별 대사 처리를 위해 **커스텀 상태머신(FSM)** 구현  
-- 대사/사운드/장비 데이터를 **ScriptableObject**로 유연하게 관리  
-- **UI 연출 요소를 통합 관리**하는 부모 클래스(UIBase) 설계  
-- **딕셔너리 데이터를 인스펙터에서 직렬화**하여, 기획자도 에디터 상에서 쉽게 수정 가능하도록 구성
+- **재사용성과 확장성을 고려한 설계**
+- **제네릭 기반 커스텀 상태머신(FSM)**
+- **ScriptableObject를 활용한 데이터 설계**
+- **DOTween 기반 UI 연출 시스템 구성**
+- **이벤트 기반 UI 갱신 시스템**
+- **SerializableDictionary 기반 효과음 처리**
 
 
 ## 🧩 주요 기능
@@ -92,6 +93,25 @@
     }
 ```
 >장비의 능력치를 하나의 메서드에서 통합 적용/해제하여, 구조적으로 일관성을 유지했습니다.
+
+
+2.🔗[UIStatus.cs](./Assets/03.Scripts/UI/UIStatus.cs)
+
+👉 스탯 변경 시 자동 UI 갱신을 위한 이벤트 등록
+```csharp
+    protected override void Start()
+    {
+        base.Start();
+
+        player = GameManager.Instance.Player;
+        player.OnUpdateStatusEvent += SetStatus; //스탯 업데이트시 호출되는 함수 설정
+        SetStatus(player.Character); //플레이어 스탯 표시
+
+        returnButton.onClick.AddListener(Return);
+    }
+```
+>OnUpdateStatusEvent 델리게이트를 통해,
+>데이터 변경이 발생할 때마다 UIStatus가 자동으로 갱신됩니다.
 </details>
 
 <details>
@@ -214,12 +234,55 @@
         audioSource.PlayOneShot(dataList.SEClips[type]);
     }
 ```
->SEType Enum을 기반으로 효과음을 재생하며,
->SerializableDictionary를 사용하여 인스펙터에서도 Enum-Clip 매핑을 쉽게 설정할 수 있도록 구성했습니다.
+
+> SEType Enum을 기반으로 효과음을 재생하며,
+> SerializableDictionary를 사용하여 인스펙터에서도 Enum-Clip 매핑을 쉽게 설정할 수 있도록 구성했습니다.
 </details>
 
-- 🎛️ **DOTween을 사용한 UI 애니메이션**
-- 🔁 **이벤트 기반 UI 갱신**
+<details>
+<summary>🎛️DOTween을 사용한 UI 애니메이션</summary>
+<br>
+
+1.🔗[EffectManager.cs](./Assets/03.Scripts/Manager/EffectManager.cs)
+
+👉 공통 애니메이션 래퍼 유틸
+```csharp
+    //서서히 보이게 하는 애니메이션
+    public static void PlayFadeIn(CanvasGroup target, float duration, Action endCallback = null)
+    {
+        AttachOnComplete(target.DOFade(1f, duration), endCallback);
+    }
+    //서서히 사라지게 하는 애니메이션
+    public static void PlayFadeOut(CanvasGroup target, float duration, Action endCallback = null)
+    {
+        AttachOnComplete(target.DOFade(0f, duration), endCallback);
+    }
+    ... 생략
+    private static void AttachOnComplete(Tween tween, Action endCallback)
+    {
+        tween.OnComplete(() => endCallback?.Invoke());
+    }
+```
+2.🔗[FadeInOutEffect.cs](./Assets/03.Scripts/Effect/FadeInOutEffect.cs)
+
+👉 캔버스 그룹 페이드 애니메이션
+```csharp
+    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private float duration; //애니메이션이 진행될 시간(초)
+
+    public void FadeIn(Action endFadeInEvent = null)
+    {
+        EffectManager.PlayFadeIn(canvasGroup, duration, endFadeInEvent);
+    }
+
+    public void FadeOut(Action endFadeOutEvent = null)
+    {
+        EffectManager.PlayFadeIn(canvasGroup, duration, endFadeOutEvent);
+    }
+```
+> EffectManager에서 DOTween을 래핑한 공통 애니메이션 메서드를 관리하며,
+> 각 효과 클래스는 인스펙터에서 설정 가능한 구조로 만들어 재사용성과 협업 효율을 높였습니다.
+</details>
 
 ## 📚 출처
 - 사용된 사운드: Music by 브그미언 Track 별 https://youtu.be/SEhaCeUftJ8
