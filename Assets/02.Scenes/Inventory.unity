@@ -483,7 +483,7 @@ RectTransform:
   m_GameObject: {fileID: 442020202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 867041945}
@@ -625,6 +625,11 @@ MonoBehaviour:
     duration: 0.3
     startHeight: 250
     endHeight: 850
+  statusTextEffect:
+    target: {fileID: 442020203}
+    duration: 0.3
+    startScale: 0
+    endScale: 1
 --- !u!225 &476375099
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6901,7 +6906,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -24, y: 85}
-  m_SizeDelta: {x: 780, y: 850}
+  m_SizeDelta: {x: 780, y: 250}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1438115008
 MonoBehaviour:
