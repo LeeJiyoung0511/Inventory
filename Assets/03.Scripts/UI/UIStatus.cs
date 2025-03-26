@@ -11,6 +11,7 @@ public class UIStatus : UIBase
 
     [Header("연출")]
     [SerializeField] ModifyHeightEffect scrollImageEffect; // 스크롤 이미지의 확장/축소
+    [SerializeField] ModifyScaleEffect statusTextEffect; // 스탯 텍스트의 확장/축소
 
     private Player player;
 
@@ -28,6 +29,7 @@ public class UIStatus : UIBase
     public override void Display()
     {
         scrollImageEffect.Expand(); //스크롤 이미지의 확장
+        statusTextEffect.ExpandScaleY(); // 스탯 텍스트의 확장
         base.Display();
     }
 
@@ -41,6 +43,7 @@ public class UIStatus : UIBase
     private void Return()
     {
         scrollImageEffect.Collapse(); //스크롤 이미지의 축소
+        statusTextEffect.CollapseScaleY(); // 스탯 텍스트의 축소
         returnButton.interactable = false; //버튼 비활성화
         Hide(EndCloseScrollEvent); //스탯창 닫기
         SoundManager.Instance.PlaySE(SEType.Button); //버튼 효과음 재생

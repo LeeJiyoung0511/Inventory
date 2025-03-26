@@ -34,6 +34,11 @@ public static class EffectManager
             .SetLoops(-1, LoopType.Yoyo)
             .SetEase(Ease.InOutSine);
     }
+    //스케일 Y 조정 애니메이션
+    public static void DOScaleY(Transform transform, float newScaleY, float duration, Action endCallback = null)
+    {
+        AttachOnComplete(transform.DOScaleY(newScaleY, duration), endCallback);
+    }
     private static void AttachOnComplete(Tween tween, Action endCallback)
     {
         tween.OnComplete(() => endCallback?.Invoke());
